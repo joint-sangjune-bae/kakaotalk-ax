@@ -6,6 +6,10 @@ macOS 카카오톡을 네이티브 Accessibility(AX) API로 읽고 조작하는 
 모든 기능은 실행 중인 공식 카카오톡 앱의 AX 요소를 사용합니다.
 실행 명령은 `kax`이며, MCP 서버는 `kax mcp`로 실행합니다.
 
+Windows용은 [접근성 사전진단](docs/windows-accessibility.md)을 준비하는 단계입니다.
+별도 명령 `kax-win-probe`는 선택한 창의 구조와 지원 패턴만 조사합니다.
+Windows 메시지 본문 읽기와 실제 카카오톡 동작은 아직 검증하지 않았습니다.
+
 ## 설치
 
 macOS, Python 3.10 이상, 로그인된 공식 카카오톡 앱, Swift 컴파일러가 필요합니다.

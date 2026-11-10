@@ -13,12 +13,14 @@ license = "MIT"
 [project.optional-dependencies]
 mcp = ["mcp>=1.30,<2"]
 dev = ["PyYAML>=6,<7"]
+windows-probe = ["pywinauto==0.6.9; sys_platform == 'win32'"]
 
 [project.scripts]
 kax = "kakaotalk_automation:main"
+kax-win-probe = "kakaotalk_windows_probe:main"
 
 [tool.setuptools]
-py-modules = ["kakaotalk_mcp", "kakaotalk_automation", "kakaotalk_ax", "kakaotalk_state"]
+py-modules = ["kakaotalk_mcp", "kakaotalk_automation", "kakaotalk_ax", "kakaotalk_state", "kakaotalk_windows_probe"]
 packages = ["kakaotalk_native"]
 
 [tool.setuptools.package-data]
