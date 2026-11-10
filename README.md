@@ -9,6 +9,7 @@ macOS 카카오톡을 네이티브 Accessibility(AX) API로 읽고 조작하는 
 Windows용은 [접근성 사전진단](docs/windows-accessibility.md)을 준비하는 단계입니다.
 별도 명령 `kax-win-probe`는 선택한 창의 구조와 지원 패턴만 조사합니다.
 Windows 메시지 본문 읽기와 실제 카카오톡 동작은 아직 검증하지 않았습니다.
+실제 Windows PC 검증은 [테스트 요청서](docs/windows-test-request.md)에 따라 진행합니다.
 
 ## 설치
 

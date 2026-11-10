@@ -11,6 +11,7 @@ Windows 카카오톡이 메시지 본문을 어떤 접근성 정보로 노출하
 | Windows용 독립 진단 명령 | 구현됨 |
 | 민감한 텍스트 출력 방지와 범위 제한 | 합성 테스트로 검증 |
 | macOS에서 Windows 명령의 실행 차단 | 자동 검증 |
+| Windows 의존성 설치·import·잘못된 핸들 차단 | Windows CI 통과 |
 | 실제 Windows의 UI Automation·Win32 조회 | 미실행 |
 | Windows 카카오톡 본문·작성자·시각 추출 | 미구현·미확인 |
 | Mac용 CLI·MCP | 기존 구현 유지 |
@@ -44,7 +45,7 @@ py -3.11 -m venv .venv
 ```
 
 `pywinauto==0.6.9`를 Windows 전용 선택 의존성으로 추가했습니다.
-이 핀과 설치 절차의 실제 Windows 실행은 아직 확인하지 않았습니다.
+이 핀의 설치와 CLI 실행은 Windows CI에서 확인했습니다. 실제 카카오톡 창의 호환성은 별도로 검증합니다.
 
 ## 구조 조사 순서
 
@@ -137,3 +138,7 @@ python -m unittest discover -s tests -v
 2026-11-10 macOS·Python 3.14.7에서 전체 71개 테스트와 CLI 도움말·OS 차단 검사를 통과했습니다.
 Windows CI는 선택 의존성 설치, 실제 `pywinauto` import, 합성 테스트와 잘못된 창 핸들의 차단을 검사합니다.
 CI에도 카카오톡은 설치하지 않으므로 본문 조회나 실제 대화창 탐색의 검증을 대신하지 않습니다.
+
+진단 코드 커밋 `d24a032f483bfeed22ce461ea2244be06e7f5db3`의
+[Windows CI](https://github.com/joint-sangjune-bae/kakaotalk-ax/actions/runs/42742620331)가 통과했습니다.
+실제 PC에서의 실행 순서와 결과 양식은 [Windows 테스트 요청서](windows-test-request.md)를 사용합니다.
